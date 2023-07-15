@@ -1,0 +1,15 @@
+{
+  "name": "apis-proxy",
+  "version": "1.0.0",
+  "description": "API proxy server for tracking and controlling access to destination server",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest"
+  },
+  "author": "Santiago Carrizo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
