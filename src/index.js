@@ -9,5 +9,5 @@ const PORT = process.env.PORT || 3000;
 app.use('/', proxyMiddleware);
 
 app.listen(PORT, () => {
-  console.log(`Server listing on port ${PORT}`);
+  console.log(`Server listening on port ${PORT}`);
 });
