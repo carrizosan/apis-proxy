@@ -2,7 +2,8 @@
   "env": {
     "node": true,
     "commonjs": true,
-    "es2021": true
+    "es2023": true,
+    "ecmaVersion": 2023
   },
   "extends": "eslint:recommended",
   "parserOptions": {
