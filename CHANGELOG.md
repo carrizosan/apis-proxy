@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/carrizosan/apis-proxy/compare/v1.1.0...v1.2.0) (2023-07-18)
+
+
+### Features
+
+* add path and ip-path rate limiters ([d34a805](https://github.com/carrizosan/apis-proxy/commit/d34a80548e745e57f8970e5193cb4a877c361c75))
+* change rate limiters store to redis ([a45a9f9](https://github.com/carrizosan/apis-proxy/commit/a45a9f9e6c94ceaef83cf6050bbdc5e71cd9d3fc))
+* implement basic rate limiter by IP address ([d2f43aa](https://github.com/carrizosan/apis-proxy/commit/d2f43aaeec5aedb08bd8ee1fdeaff5dc0986f6b6))
+* log requests in cassandra db and get lasts requests info ([de789c4](https://github.com/carrizosan/apis-proxy/commit/de789c4c9bccf7a2d8c6a3a90dcc815ed83dbc8b))
+
 ## [1.1.0](https://github.com/carrizosan/apis-proxy/compare/v1.0.0...v1.1.0) (2023-07-16)
 
 

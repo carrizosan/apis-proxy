@@ -9,7 +9,7 @@ const {
   ipAndPathRateLimiter,
 } = require('./middlewares/rate-limiters.middleware');
 const cassandraDB = require('./db/cassandra/init-cassandra');
-const { logRequests } = require('./middlewares/log-requests.middleware');
+const { logRequests } = require('./middlewares/logger.middleware');
 
 const app = express();
 app.use(express.json());
@@ -30,8 +30,8 @@ app.use('/statistics', statisticsRoute);
 
 // Rate limit middlewares
 app.use(ipAndPathRateLimiter);
-app.use(ipRateLimiter);
 app.use(pathRateLimiter);
+app.use(ipRateLimiter);
 
 app.use(logRequests);
 app.use(proxyMiddleware);
