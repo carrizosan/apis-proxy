@@ -1,7 +1,7 @@
 const rateLimit = require('express-rate-limit');
 const RedisStore = require('rate-limit-redis');
 const { getClient } = require('../db/redis/init-redis');
-const { insertRequest } = require('../db/cassandra/statistics.repository');
+const { insertRequest } = require('../db/mongodb/statistics.repository');
 
 const DEFAULT_WINDOW_TIME = 60 * 60 * 1000; // 1 hour window default
 const DEFAULT_MAX_REQUESTS = 1000; // 1000 requests by window default
