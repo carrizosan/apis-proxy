@@ -8,13 +8,16 @@ const {
   pathRateLimiter,
   ipAndPathRateLimiter,
 } = require('./middlewares/rate-limiters.middleware');
-const cassandraDB = require('./db/cassandra/init-cassandra');
+const mongoDB = require('./db/mongodb/init-mongo');
 const { logRequests } = require('./middlewares/logger.middleware');
+const { Settings } = require('luxon');
 
 const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
+
+Settings.defaultZone = 'America/Argentina/Buenos_Aires';
 
 /**
  * Trust proxy is used to get de correct IP Address when there is some proxy
@@ -37,6 +40,6 @@ app.use(logRequests);
 app.use(proxyMiddleware);
 
 app.listen(PORT, async () => {
-  await cassandraDB.connect();
+  await mongoDB.connect();
   console.log(`Server listening on port ${PORT}`);
 });

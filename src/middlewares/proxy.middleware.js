@@ -1,5 +1,5 @@
 const { createProxyMiddleware, responseInterceptor } = require('http-proxy-middleware');
-const { insertRequest } = require('../db/cassandra/statistics.repository');
+const { insertRequest } = require('../db/mongodb/statistics.repository');
 
 const proxy = createProxyMiddleware({
   target: process.env.DESTINATION_API,
