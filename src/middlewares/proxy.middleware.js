@@ -9,7 +9,13 @@ const proxy = createProxyMiddleware({
   onProxyRes: responseInterceptor((responseBuffer, proxyRes, req, res) => {
     const { path, method, ip } = req;
     const { statusCode } = res;
-    insertRequest(path, ip, method, statusCode);
+    let errorMessage = null;
+
+    if (statusCode && statusCode >= 400) {
+      const body = JSON.parse(responseBuffer.toString('utf8'));
+      errorMessage = `${body.error} - ${body.message}`;
+    }
+    insertRequest(path, ip, method, statusCode, errorMessage);
     return responseBuffer;
   }),
 });
