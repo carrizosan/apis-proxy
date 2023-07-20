@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/carrizosan/apis-proxy/compare/v1.3.0...v1.4.0) (2023-07-20)
+
+
+### Features
+
+* add jsdoc and map errors ([0631c32](https://github.com/carrizosan/apis-proxy/commit/0631c32f4cbef1f9a1069104af472ea129393b60))
+
+
+### Bug Fixes
+
+* readme ([ec7a462](https://github.com/carrizosan/apis-proxy/commit/ec7a462baa8866d29f67aae0ff8fd85de0289085))
+
 ## [1.3.0](https://github.com/carrizosan/apis-proxy/compare/v1.2.0...v1.3.0) (2023-07-20)
 
 
