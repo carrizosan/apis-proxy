@@ -16,16 +16,16 @@ npm install
 Create a .env file in the root.
 You can find an example in the _/docs_ folder.
 
-IP_RATE_LIMIT_WINDOW_MINUTES: define the period of time where IP's count are stored and refresh the limit.
-IP_RATE_LIMIT_MAX_REQUESTS: request allowed by "window", by IP.
-PATH_RATE_LIMIT_WINDOW_MINUTES: define the period of time where paths count are stored and refresh the limit.
-PATH_RATE_LIMIT_MAX_REQUESTS: request allowed by "window", by path.
-IP_PATH_RATE_LIMIT_WINDOW_MINUTES: define the period of time where the combination of IP and paths count are stored and refresh the limit.
-IP_PATH_RATE_LIMIT_MAX_REQUESTS: request allowed by "window", by IP and path combination.
-DESTINATION_API: the destination of the proxy.
-PORT: server port.
-REDIS_HOST: connection URI for redis service.
-MONGO_DB_URI: connection URI for mongodb service.
+- IP_RATE_LIMIT_WINDOW_MINUTES: define the period of time where IP's count are stored and refresh the limit.
+- IP_RATE_LIMIT_MAX_REQUESTS: request allowed by "window", by IP.
+- PATH_RATE_LIMIT_WINDOW_MINUTES: define the period of time where paths count are stored and refresh the limit.
+- PATH_RATE_LIMIT_MAX_REQUESTS: request allowed by "window", by path.
+- IP_PATH_RATE_LIMIT_WINDOW_MINUTES: define the period of time where the combination of IP and paths count are stored and refresh the limit.
+- IP_PATH_RATE_LIMIT_MAX_REQUESTS: request allowed by "window", by IP and path combination.
+- DESTINATION_API: the destination of the proxy.
+- PORT: server port.
+- REDIS_HOST: connection URI for redis service.
+- MONGO_DB_URI: connection URI for mongodb service.
 
 ## Running the app
 
