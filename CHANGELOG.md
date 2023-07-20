@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/carrizosan/apis-proxy/compare/v1.2.0...v1.3.0) (2023-07-20)
+
+
+### Features
+
+* implement statistics endpoints and mongodb ([e6e9a72](https://github.com/carrizosan/apis-proxy/commit/e6e9a72ae49cf5296fc77c7642fb09db319cb159))
+
 ## [1.2.0](https://github.com/carrizosan/apis-proxy/compare/v1.1.0...v1.2.0) (2023-07-18)
 
 

@@ -1,0 +1,182 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Proxy API",
+    "description": "API to get requests statistics and logs",
+    "version": "1.2.0"
+  },
+  "paths": {
+    "/statistics/lasts": {
+      "get": {
+        "summary": "Get lasts statistics",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number (optional, default: 1)",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Page size (optional, default: 20)",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "ip",
+            "in": "query",
+            "description": "Filter by IP (optional)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "description": "Filter by path (optional)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "method",
+            "in": "query",
+            "description": "Filter by method (optional)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by status code (optional)",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": "string" },
+                          "path": { "type": "string" },
+                          "ip": { "type": "string" },
+                          "method": { "type": "string" },
+                          "status": { "type": "number" },
+                          "date": { "type": "string", "format": "date-time" },
+                          "errorMessage": { "type": "string" }
+                        }
+                      }
+                    },
+                    "info": {
+                      "type": "object",
+                      "properties": {
+                        "page": { "type": "number" },
+                        "itemsByPage": { "type": "number" },
+                        "itemsInPage": { "type": "number" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/statistics/most-requested": {
+      "get": {
+        "summary": "Get most requested paths",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "path": { "type": "string" },
+                      "count": { "type": "number" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/statistics/by-date": {
+      "get": {
+        "summary": "Get requests between two datetimes",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "description": "Start date (format: YYYY-MM-DDTHH:MM:SS)",
+            "example": "2023-07-18T00:00:00",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "example": "2023-07-18T23:59:59",
+            "description": "End date (format: YYYY-MM-DDTHH:MM:SS)",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": "string" },
+                          "path": { "type": "string" },
+                          "ip": { "type": "string" },
+                          "method": { "type": "string" },
+                          "status": { "type": "number" },
+                          "date": { "type": "string", "format": "date-time" },
+                          "errorMessage": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
