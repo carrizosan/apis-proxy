@@ -62,7 +62,7 @@ Services are documented in swagger path. Also you can download the `swagger.json
 - Return the right rate limit headers when using multiple limiters
 - Testing for limiters
 
-## Contribución
+## Contribution
 
 If you find an error, you have a suggestion or you want to contribute, feel free to open a PR 😊
 
