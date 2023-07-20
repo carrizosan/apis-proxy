@@ -1,6 +1,6 @@
 {
   "name": "apis-proxy",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "API proxy server for tracking and controlling access to destination server",
   "main": "src/index.js",
   "scripts": {
