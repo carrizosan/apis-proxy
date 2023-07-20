@@ -15,6 +15,7 @@ const createRateLimiter = (
   standardHeaders = true,
   legacyHeaders = false
 ) => {
+  const errorMessage = 'Too many requests, please try again later.';
   return rateLimit({
     windowMs,
     max, // Number of requests by window
@@ -27,11 +28,11 @@ const createRateLimiter = (
     handler: (req, res, next, options) => {
       // Handle response when client reached limit
       const { path, ip, method } = req;
-      insertRequest(path, ip, method, options.statusCode);
+      insertRequest(path, ip, method, options.statusCode, errorMessage);
       return res.status(options.statusCode).send(options.message);
     },
     message: {
-      error: 'Too many requests, please try again later.',
+      error: errorMessage,
       statusCode: 429,
     },
   });
