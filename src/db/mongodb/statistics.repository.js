@@ -39,7 +39,10 @@ const getMostRequestedPaths = async () => {
         $sort: { count: -1 },
       },
     ]);
-    return requests;
+    const response = requests.map((req) => {
+      return { path: req._id.path, count: req.count };
+    });
+    return response;
   } catch (err) {
     console.log(err.message);
     throw err;
