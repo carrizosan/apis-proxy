@@ -24,8 +24,7 @@
     "luxon": "^3.3.0",
     "mongoose": "^7.3.4",
     "rate-limit-redis": "^3.0.2",
-    "swagger-ui-express": "^5.0.0",
-    "ulid": "^2.3.0"
+    "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "^8.45.0",
